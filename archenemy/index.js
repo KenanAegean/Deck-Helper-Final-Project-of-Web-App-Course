@@ -1,8 +1,10 @@
 var cards = new Array();
 var ongoing = new Array();
-// for (let index = 0; index < 50; index++) {
-//     cards[index] = new Image();
-// }
+var selectedArray = new Array();
+var ongoingTemp = new Array();
+var qChecker = false;
+
+
 cards[0] = "cards/i-bask-in-your-silent-awe.jpg";
 cards[1] = "cards/i-know-all-i-see-all.jpg";
 cards[2] = "cards/imprison-this-insolent-wretch.jpg";
@@ -11,7 +13,7 @@ cards[4] = "cards/nature-shields-its-own.jpg";
 cards[5] = "cards/nothing-can-stop-me-now.jpg";
 cards[6] = "cards/the-very-soil-shall-shake.jpg";
 cards[7] = "cards/your-inescapable-doom.jpg";
-for (let index = 0; index < 7; index++) {
+for (let index = 0; index <= 7; index++) {
     ongoing[index] = cards[index];
 }
 cards[8] = "cards/a-display-of-my-dark-power.jpg";
@@ -147,6 +149,204 @@ TrampleCivilizationUnderfoot[17] = cards[49];
 TrampleCivilizationUnderfoot[18] = cards[19];
 TrampleCivilizationUnderfoot[19] = cards[19];
 
-function deneme() {
-    document.getElementById("img2").src = cards[0];
+
+function deckCall(value)
+{
+    checker(value);
+    shuffleDeck(selectedArray);
+    ongoingFind(selectedArray, i);
+    document.getElementById("img1").src = selectedArray[0];
+    document.getElementById("img3").src = selectedArray[0];
+    count = 1;
+    countShow.innerText = "Turn: " + count;
+}
+
+
+function shuffleDeck(array) 
+{
+    for (var i = array.length - 1; i > 0; i--) 
+    {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+}
+
+var i = 0;
+function imageClicked()
+{
+    TurnCount();
+    if(i<=selectedArray.length - 1)
+    {
+        ongoingFind(selectedArray, i);
+        document.getElementById("img1").src = selectedArray[i];
+        document.getElementById("img3").src = selectedArray[i];
+        i++;        
+    }
+    else
+    {
+        i = 0;   
+    }    
+}
+
+var ongoungCounter = 0;
+var ongoungCounter2 = 0;
+var j = 3;
+
+function ongoingFind(array, i)
+{
+    if( array[i] == ongoing[0] || array[i] == ongoing[1] || array[i] == ongoing[2] || array[i] == ongoing[3] || array[i] == ongoing[4] || array[i] == ongoing[5] || array[i] == ongoing[6] || array[i] == ongoing[7])
+    {
+        if(ongoungCounter == 0)
+        {
+            document.getElementById("img2").src = array[i];
+            ongoingTemp[0] = array[i];
+            array.splice(i, 1);
+            ongoungCounter++;
+        }
+        else if(ongoungCounter == 1)
+        {
+            document.getElementById("img4").src = array[i];
+            ongoingTemp[1] = array[i];
+            array.splice(i, 1);
+            ongoungCounter++;
+        }
+        else if(ongoungCounter == 2)
+        {
+            document.getElementById("img5").src = array[i];
+            ongoingTemp[2] = array[i];
+            array.splice(i, 1);
+            ongoungCounter++;
+        }           
+    }
+    array[array.length-1]
+    //if((i == 17 && qChecker == true) || (i == 18 && qChecker == true) || (i == 19 && qChecker == true) )
+    
+    if(i == array.length-j && qChecker == true )
+    {
+        
+        
+        //alert(array.length);
+        if(ongoungCounter2 == 0)
+        {
+            //alert(array[17]);
+            document.getElementById("img2").src = array[i];
+            ongoingTemp[0] = array[i];
+            array.splice(i, 1);
+            ongoungCounter2++;
+            j = 1;
+            
+            //qChecker == false;
+        }
+        else if(ongoungCounter2 == 1)
+        {
+            //alert(array[18]);
+            document.getElementById("img4").src = array[i];
+            ongoingTemp[1] = array[i];
+            array.splice(i, 1);
+            ongoungCounter2++;
+            j = -2;
+            //qChecker == false;
+        }
+        else if(ongoungCounter2 == 2)
+        {
+            //alert(array[17]);
+            document.getElementById("img5").src = array[i-3];
+            ongoingTemp[2] = array[i-3];
+            array.splice(17, 1);
+            ongoungCounter2++;
+            j = 3;
+            
+            //qChecker == false;
+        }
+    }
+}
+
+var ogimgCounter = 2;
+function ongoingImageClicked()
+{
+    
+    if (ogimgCounter == 2)
+    {
+        document.getElementById("img5").src = "";
+        ogimgCounter--;
+        selectedArray.push(ongoingTemp[0]);
+        qChecker = true;
+        //alert(selectedArray.length);
+    }
+    else if (ogimgCounter == 1)
+    {
+        
+        document.getElementById("img4").src = "";
+        ogimgCounter--;
+        selectedArray.push(ongoingTemp[1]);
+        qChecker = true;
+        //alert(selectedArray.length);
+    }
+    else if (ogimgCounter == 0)
+    {
+        
+        document.getElementById("img2").src = "";
+        ogimgCounter = 2;
+        selectedArray.push(ongoingTemp[2]);
+        qChecker = true;
+        //alert(selectedArray.length);
+        
+    }
+        
+}
+
+var count = 1;
+function TurnCount()
+{
+    count++;
+    countShow.innerText = "Turn: " + count;
+}
+
+function checker(value)
+{
+    if(value == 1)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = AssembletheDoomsdayMachine[index];
+        }
+    }
+    else if(value == 2)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = ScorchtheWorldwithDragonfire[index];
+        }
+    }
+    else if(value == 3)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = AssembletheDoomsdayMachine[index];
+        }
+    }
+    else if(value == 4)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = AssembletheDoomsdayMachine[index];
+        }
+    }
+    else if(value == 5)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = ScorchtheWorldwithDragonfire[index];
+        }
+    }
+    else if(value == 6)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = TrampleCivilizationUnderfoot[index];
+        }
+    }
 }
