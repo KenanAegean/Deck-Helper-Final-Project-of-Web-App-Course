@@ -2,7 +2,6 @@ var cards = new Array();
 var ongoing = new Array();
 var selectedArray = new Array();
 var ongoingTemp = new Array();
-var qChecker = false;
 
 
 cards[0] = "cards/i-bask-in-your-silent-awe.jpg";
@@ -158,7 +157,11 @@ function deckCall(value)
     document.getElementById("img1").src = selectedArray[0];
     document.getElementById("img3").src = selectedArray[0];
     count = 1;
-    countShow.innerText = "Turn: " + count;
+    countShow.innerText = "Turn: " + 1;
+    document.getElementById("img2").src = "";
+    document.getElementById("img4").src = "";
+    document.getElementById("img5").src = "";
+
 }
 
 
@@ -175,36 +178,53 @@ function shuffleDeck(array)
 }
 
 var i = 0;
+var round = -1;
 function imageClicked()
 {
+    //alert(i);
     TurnCount();
-    if(i<=selectedArray.length - 1)
+    if(i <= selectedArray.length - 1)
     {
-        ongoingFind(selectedArray, i);
         document.getElementById("img1").src = selectedArray[i];
         document.getElementById("img3").src = selectedArray[i];
-        i++;        
+        ongoingFind(selectedArray, i);       
+        i++;
+                
     }
     else
     {
-        i = 0;   
+        //alert( "burda mıyım");
+        if (round > 0) 
+        {
+            //alert( "buraya girdiö");
+            i = 17;
+            round = round*(-1); 
+        }
+        else
+        {
+            i = 0;
+        }
+               
+        document.getElementById("img1").src = selectedArray[i];
+        document.getElementById("img3").src = selectedArray[i];
+        ongoingFind(selectedArray, i);
+        
     }    
 }
 
 var ongoungCounter = 0;
-var ongoungCounter2 = 0;
-var j = 3;
-
 function ongoingFind(array, i)
 {
     if( array[i] == ongoing[0] || array[i] == ongoing[1] || array[i] == ongoing[2] || array[i] == ongoing[3] || array[i] == ongoing[4] || array[i] == ongoing[5] || array[i] == ongoing[6] || array[i] == ongoing[7])
     {
+
         if(ongoungCounter == 0)
         {
             document.getElementById("img2").src = array[i];
             ongoingTemp[0] = array[i];
             array.splice(i, 1);
             ongoungCounter++;
+            //alert("1 de çıkıyom");
         }
         else if(ongoungCounter == 1)
         {
@@ -212,55 +232,21 @@ function ongoingFind(array, i)
             ongoingTemp[1] = array[i];
             array.splice(i, 1);
             ongoungCounter++;
+            //alert("aradığın" + i);
+            //alert("2 de çıkıyom");
         }
         else if(ongoungCounter == 2)
         {
+            //alert(i);
             document.getElementById("img5").src = array[i];
             ongoingTemp[2] = array[i];
             array.splice(i, 1);
-            ongoungCounter++;
-        }           
-    }
-    array[array.length-1]
-    //if((i == 17 && qChecker == true) || (i == 18 && qChecker == true) || (i == 19 && qChecker == true) )
-    
-    if(i == array.length-j && qChecker == true )
-    {
-        
-        
-        //alert(array.length);
-        if(ongoungCounter2 == 0)
-        {
-            //alert(array[17]);
-            document.getElementById("img2").src = array[i];
-            ongoingTemp[0] = array[i];
-            array.splice(i, 1);
-            ongoungCounter2++;
-            j = 1;
-            
-            //qChecker == false;
+            ongoungCounter = 0;
+            //round = round*(-1);
+            //alert("3 de çıkıyom");
         }
-        else if(ongoungCounter2 == 1)
-        {
-            //alert(array[18]);
-            document.getElementById("img4").src = array[i];
-            ongoingTemp[1] = array[i];
-            array.splice(i, 1);
-            ongoungCounter2++;
-            j = -2;
-            //qChecker == false;
-        }
-        else if(ongoungCounter2 == 2)
-        {
-            //alert(array[17]);
-            document.getElementById("img5").src = array[i-3];
-            ongoingTemp[2] = array[i-3];
-            array.splice(17, 1);
-            ongoungCounter2++;
-            j = 3;
-            
-            //qChecker == false;
-        }
+        //alert("hop ordayım hop burda");
+                   
     }
 }
 
@@ -292,6 +278,8 @@ function ongoingImageClicked()
         ogimgCounter = 2;
         selectedArray.push(ongoingTemp[2]);
         qChecker = true;
+        round = round*(-1);
+
         //alert(selectedArray.length);
         
     }
