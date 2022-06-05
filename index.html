@@ -28,7 +28,7 @@
                 <option style="color: white;" value="3">Bring About the Undead Apocalypse</option>
                 <option style="color: white;" value="4">Scorch the World with Dragonfire</option>
                 <option style="color: white;" value="5">Trample Civilization Underfoot</option>
-                <option style="color: white;" value="6">_Peter's Drown Them Into the Abyss</option>
+                <option style="color: white;" value="6">Kenan's Magneficent Awesome Deck </option>
             </select>
             <br>
             <br>
@@ -36,7 +36,7 @@
             <br>
             <label style="color: white;">(click the pick next)</label>
             <br>
-            <img onclick="imageClicked()" id="img1" width="200px">
+            <img onmouseover="mouseOver('smlPic')" onclick="imageClicked()" id="smlPic" width="200px">
             <label id="countShow" style="color: white;">Turn: 1</label>
             <br>
             <label style="color: white;">Ongoing schemes:</label>
@@ -44,19 +44,19 @@
             <label style="color: white;">(right-click to abandon)</label>
             <br>
             <div style="position:absolute; z-index:1; top:500px;">
-                <img value="0" onclick="ongoingImageClicked()" width="200px"  id="img2">
+                <img onmousedown="mouseDown();" onmouseover="mouseOver('img1')" value="0"  width="200px"  id="img1">
             </div>
             <div  style="position:absolute; z-index:2; top:540px; ">
-                <img value="1" onclick="ongoingImageClicked()" width="200px" id="img4">
+                <img onmousedown="mouseDown();" onmouseover="mouseOver('img2')" value="1"  width="200px" id="img2">
             </div>
             <div   style="position:absolute; z-index:3; top:580px; ">
-                <img value="2" onclick="ongoingImageClicked()" width="200px" id="img5">
+                <img onmousedown="mouseDown();" onmouseover="mouseOver('img3')" value="2"  width="200px" id="img3">
             </div>
             <br>
         </div>
 
         <div style="margin: auto; display: grid; height: 100%;">
-            <img style="max-width: 100%; max-height: 100vh;" id="img3">
+            <img style="max-width: 100%; max-height: 100vh;" id="bigPic">
         </div>
     </div>
 
