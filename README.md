@@ -1,6 +1,8 @@
 # Deck-Helper-Final-Project-of-Web-App-Course
 Final Project of Web App Course
-https://kenanaegean.github.io/Deck-Helper-Final-Project-of-Web-App-Course/
+<br>
+<a href="https://kenanaegean.github.io/Deck-Helper-Final-Project-of-Web-App-Course/">Live Demo</a>
+
 
 <p class="title">
 Final project
