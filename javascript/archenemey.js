@@ -264,8 +264,9 @@ function praparePage(value)
     checker(value);
     shuffleDeck(selectedArray);
     ongoingFind(selectedArray, 0);
-    document.getElementById("smlPic").src = cards[0];
-    document.getElementById("bigPic").src = cards[0];
+    var random = Math.floor(Math.random() * (12) + 8);
+    document.getElementById("smlPic").src = cards[random];
+    document.getElementById("bigPic").src = cards[random];
 }
 
 
