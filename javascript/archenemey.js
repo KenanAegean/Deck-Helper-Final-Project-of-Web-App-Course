@@ -1,6 +1,7 @@
 var cards = new Array();
 var selectedArray = new Array();
 var ongoingTemp = new Array();
+var customCards = new Array();
 
 cards[0] = "cards/i-bask-in-your-silent-awe.jpg";
 cards[1] = "cards/i-know-all-i-see-all.jpg";
@@ -52,6 +53,11 @@ cards[46] = "cards/tooth-claw-and-tail.jpg";
 cards[47] = "cards/which-of-you-burns-brightest.jpg";
 cards[48] = "cards/your-fate-is-thrice-sealed.jpg";
 cards[49] = "cards/your-puny-minds-cannot-fathom.jpg";
+
+customCards[0] = "cards/mycustom/buyme.png";
+customCards[1] = "cards/mycustom/gitar.png";
+customCards[2] = "cards/mycustom/vacation.png";
+
 
 var AssembletheDoomsdayMachine = new Array();
 AssembletheDoomsdayMachine[0] = cards[9];
@@ -142,9 +148,9 @@ TrampleCivilizationUnderfoot[18] = cards[19];
 TrampleCivilizationUnderfoot[19] = cards[19];
 
 var kenanAwesomeDeck = new Array();
-kenanAwesomeDeck[0] = cards[1];
-kenanAwesomeDeck[1] = cards[5];
-kenanAwesomeDeck[2] = cards[6];
+kenanAwesomeDeck[0] = customCards[0];
+kenanAwesomeDeck[1] = customCards[1];
+kenanAwesomeDeck[2] = customCards[2];
 kenanAwesomeDeck[3] = cards[13];
 kenanAwesomeDeck[4] = cards[18];
 kenanAwesomeDeck[5] = cards[19];
@@ -190,6 +196,9 @@ for (let index = 0; index < 8; index++)
 {
     ongoing[index] = cards[index];
 }
+ongoing[8] = customCards[0];
+ongoing[9] = customCards[1];
+ongoing[10] = customCards[2];
 
 var randomDeck = new Array();
 for (var i = 0; i <  3; i++) 
@@ -334,7 +343,7 @@ function imageClicked()
 var ongoingCounter = 0;
 function ongoingFind(array, i)
 {
-    if( array[i] == ongoing[0] || array[i] == ongoing[1] || array[i] == ongoing[2] || array[i] == ongoing[3] || array[i] == ongoing[4] || array[i] == ongoing[5] || array[i] == ongoing[6] || array[i] == ongoing[7])
+    if( array[i] == ongoing[0] || array[i] == ongoing[1] || array[i] == ongoing[2] || array[i] == ongoing[3] || array[i] == ongoing[4] || array[i] == ongoing[5] || array[i] == ongoing[6] || array[i] == ongoing[7] || array[i] == ongoing[8] || array[i] == ongoing[9] || array[i] == ongoing[10])
     {
 
         if(ongoingCounter == 0)
