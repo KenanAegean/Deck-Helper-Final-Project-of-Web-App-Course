@@ -1,8 +1,6 @@
 var cards = new Array();
-var ongoing = new Array();
 var selectedArray = new Array();
 var ongoingTemp = new Array();
-
 
 cards[0] = "cards/i-bask-in-your-silent-awe.jpg";
 cards[1] = "cards/i-know-all-i-see-all.jpg";
@@ -12,9 +10,6 @@ cards[4] = "cards/nature-shields-its-own.jpg";
 cards[5] = "cards/nothing-can-stop-me-now.jpg";
 cards[6] = "cards/the-very-soil-shall-shake.jpg";
 cards[7] = "cards/your-inescapable-doom.jpg";
-for (let index = 0; index < 8; index++) {
-    ongoing[index] = cards[index];
-}
 cards[8] = "cards/a-display-of-my-dark-power.jpg";
 cards[9] = "cards/all-in-good-time.jpg";
 cards[10] = "cards/all-shall-smolder-in-my-wake.jpg";
@@ -57,7 +52,6 @@ cards[46] = "cards/tooth-claw-and-tail.jpg";
 cards[47] = "cards/which-of-you-burns-brightest.jpg";
 cards[48] = "cards/your-fate-is-thrice-sealed.jpg";
 cards[49] = "cards/your-puny-minds-cannot-fathom.jpg";
-
 
 var AssembletheDoomsdayMachine = new Array();
 AssembletheDoomsdayMachine[0] = cards[9];
@@ -103,7 +97,6 @@ BringAbouttheUndeadApocalypse[17] = cards[41];
 BringAbouttheUndeadApocalypse[18] = cards[48];
 BringAbouttheUndeadApocalypse[19] = cards[49];
 
-
 var ScorchtheWorldwithDragonfire = new Array();
 ScorchtheWorldwithDragonfire[0] = cards[10];
 ScorchtheWorldwithDragonfire[1] = cards[10];
@@ -148,30 +141,57 @@ TrampleCivilizationUnderfoot[17] = cards[49];
 TrampleCivilizationUnderfoot[18] = cards[19];
 TrampleCivilizationUnderfoot[19] = cards[19];
 
-var kenanDeck = new Array();
-kenanDeck[0] = cards[18];
-kenanDeck[1] = cards[18];
-kenanDeck[2] = cards[21];
-kenanDeck[3] = cards[22];
-kenanDeck[4] = cards[44];
-kenanDeck[5] = cards[49];
-kenanDeck[6] = cards[2];
-kenanDeck[7] = cards[29];
-kenanDeck[8] = cards[34];
-kenanDeck[9] = cards[34];
-kenanDeck[10] = cards[6];
-kenanDeck[11] = cards[4];
-kenanDeck[12] = cards[38];
-kenanDeck[13] = cards[39];
-kenanDeck[14] = cards[39];
-kenanDeck[15] = cards[9];
-kenanDeck[16] = cards[48];
-kenanDeck[17] = cards[45];
-kenanDeck[18] = cards[19];
-kenanDeck[19] = cards[8];
+var kenanAwesomeDeck = new Array();
+kenanAwesomeDeck[0] = cards[1];
+kenanAwesomeDeck[1] = cards[5];
+kenanAwesomeDeck[2] = cards[6];
+kenanAwesomeDeck[3] = cards[13];
+kenanAwesomeDeck[4] = cards[18];
+kenanAwesomeDeck[5] = cards[19];
+kenanAwesomeDeck[6] = cards[20];
+kenanAwesomeDeck[7] = cards[24];
+kenanAwesomeDeck[8] = cards[28];
+kenanAwesomeDeck[9] = cards[35];
+kenanAwesomeDeck[10] = cards[38];
+kenanAwesomeDeck[11] = cards[39];
+kenanAwesomeDeck[12] = cards[40];
+kenanAwesomeDeck[13] = cards[44];
+kenanAwesomeDeck[14] = cards[47];
+kenanAwesomeDeck[15] = cards[31];
+kenanAwesomeDeck[16] = cards[25];
+kenanAwesomeDeck[17] = cards[35];
+kenanAwesomeDeck[18] = cards[45];
+kenanAwesomeDeck[19] = cards[25];
+
+var kenanNotAwesomeDeck = new Array();
+kenanNotAwesomeDeck[0] = cards[11];
+kenanNotAwesomeDeck[1] = cards[15];
+kenanNotAwesomeDeck[2] = cards[16];
+kenanNotAwesomeDeck[3] = cards[19];
+kenanNotAwesomeDeck[4] = cards[22];
+kenanNotAwesomeDeck[5] = cards[24];
+kenanNotAwesomeDeck[6] = cards[26];
+kenanNotAwesomeDeck[7] = cards[28];
+kenanNotAwesomeDeck[8] = cards[30];
+kenanNotAwesomeDeck[9] = cards[33];
+kenanNotAwesomeDeck[10] = cards[38];
+kenanNotAwesomeDeck[11] = cards[39];
+kenanNotAwesomeDeck[12] = cards[41];
+kenanNotAwesomeDeck[13] = cards[44];
+kenanNotAwesomeDeck[14] = cards[48];
+kenanNotAwesomeDeck[15] = cards[49];
+kenanNotAwesomeDeck[16] = cards[49];
+kenanNotAwesomeDeck[17] = cards[2];
+kenanNotAwesomeDeck[18] = cards[4];
+kenanNotAwesomeDeck[19] = cards[7];
+    
+var ongoing = new Array();
+for (let index = 0; index < 8; index++) 
+{
+    ongoing[index] = cards[index];
+}
 
 var randomDeck = new Array();
-
 for (var i = 0; i <  3; i++) 
 {
     var random = Math.floor(Math.random() * 8);
@@ -182,16 +202,75 @@ for (var i = 3; i <  20; i++)
     var random = Math.floor(Math.random() * (12) + 8);
     randomDeck[i] = cards[random];
 }
-    
 
-//var i = 0;
+
+
+/* not working that way, lagging :(((
+function deckMaker()
+{
+    var AssembletheDoomsdayMachine = [
+    cards[9], cards[12], cards[16], cards[21], cards[21], 
+    cards[23], cards[1], cards[7], cards[24], cards[24], 
+    cards[26], cards[44], cards[44], cards[32], cards[5], 
+    cards[45], cards[45], cards[38], card[48], cards[49]
+    ];
+
+    var BringAbouttheUndeadApocalypse = [
+    cards[13], cards[13], cards[14], cards[42], cards[8], 
+    cards[42], cards[17], cards[17], cards[23], cards[26], 
+    cards[30], cards[3], cards[35], cards[35], cards[38], 
+    cards[40], cards[40], cards[41], , card[48], cards[49]
+    ];
+
+    var ScorchtheWorldwithDragonfire = [
+    cards[10], cards[10], cards[11], cards[43], cards[0], 
+    cards[0], cards[23], cards[26], cards[27], cards[28], 
+    cards[28], cards[31], cards[33], cards[33], cards[38], 
+    cards[46], cards[47], cards[47], card[48], cards[49]
+    ];
+
+    var TrampleCivilizationUnderfoot = [
+    cards[18], cards[18], cards[20], cards[22], cards[23], 
+    cards[25], cards[26], cards[29], cards[34], cards[34], 
+    cards[4], cards[7], cards[38], cards[39], cards[39], 
+    cards[6], cards[48], cards[49], card[19], cards[19]
+    ];
+
+    var kenanAwesomeDeck = [
+    cards[1], cards[5], cards[8], cards[13], cards[18], 
+    cards[19], cards[20], cards[24], cards[28], cards[35], 
+    cards[38], cards[39], cards[40], cards[44], cards[47], 
+    cards[31], cards[25], cards[35], card[45], cards[25]
+    ];
+
+    var kenanNotAwesomeDeck = [
+    cards[11], cards[15], cards[16], cards[19], cards[22], 
+    cards[24], cards[26], cards[28], cards[30], cards[33], 
+    cards[38], cards[39], cards[41], cards[44], cards[48], 
+    cards[49], cards[49], cards[2], card[4], cards[7]
+    ];
+}*/
+
+
 function deckCall(value)
+{
+    praparePage(value);
+    clean();    
+}
+
+
+function praparePage(value) 
 {
     checker(value);
     shuffleDeck(selectedArray);
     ongoingFind(selectedArray, 0);
-    document.getElementById("smlPic").src = selectedArray[0];
-    document.getElementById("bigPic").src = selectedArray[0];
+    document.getElementById("smlPic").src = cards[0];
+    document.getElementById("bigPic").src = cards[0];
+}
+
+
+function clean()
+{
     count = 1;
     countShow.innerText = "Turn: " + 1;
     document.getElementById("img1").src = "";
@@ -201,10 +280,10 @@ function deckCall(value)
     {
         ongoingTemp[i] = "";
     }
-
+    round = -1;
+    ongoingCounter = 0;
+    //document.location.refresh();
 }
-
-
 
 
 function shuffleDeck(array) 
@@ -215,30 +294,27 @@ function shuffleDeck(array)
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-    }
-    
+    }   
 }
+
 
 var i = 0;
 var round = -1;
 function imageClicked()
 {
-    //alert(i);
     TurnCount();
     if(i < selectedArray.length )
     {
         document.getElementById("smlPic").src = selectedArray[i];
         document.getElementById("bigPic").src = selectedArray[i];
         ongoingFind(selectedArray, i);       
-        i++;
-                
+        i++;                
     }
     else
     {
-        //alert( "burda mıyım");
+        
         if (round > 0) 
         {
-            //alert( "buraya girdiö");
             i = 17;
             round = round*(-1); 
         }
@@ -249,37 +325,37 @@ function imageClicked()
                
         document.getElementById("smlPic").src = selectedArray[i];
         document.getElementById("bigPic").src = selectedArray[i];
-        ongoingFind(selectedArray, i);
-        
+        ongoingFind(selectedArray, i);      
     }    
 }
 
-var ongoungCounter = 0;
+
+var ongoingCounter = 0;
 function ongoingFind(array, i)
 {
     if( array[i] == ongoing[0] || array[i] == ongoing[1] || array[i] == ongoing[2] || array[i] == ongoing[3] || array[i] == ongoing[4] || array[i] == ongoing[5] || array[i] == ongoing[6] || array[i] == ongoing[7])
     {
 
-        if(ongoungCounter == 0)
+        if(ongoingCounter == 0)
         {
             document.getElementById("img1").src = array[i];
             ongoingTemp[0] = array[i];
             array.splice(i, 1);
-            ongoungCounter++;
+            ongoingCounter++;
         }
-        else if(ongoungCounter == 1)
+        else if(ongoingCounter == 1)
         {
             document.getElementById("img2").src = array[i];
             ongoingTemp[1] = array[i];
             array.splice(i, 1);
-            ongoungCounter++;
+            ongoingCounter++;
         }
-        else if(ongoungCounter == 2)
+        else if(ongoingCounter == 2)
         {
             document.getElementById("img3").src = array[i];
             ongoingTemp[2] = array[i];
             array.splice(i, 1);
-            ongoungCounter++;
+            ongoingCounter++;
         }                   
     }
 }
@@ -290,35 +366,30 @@ function mouseOver(id)
     document.getElementById("bigPic").src = document.getElementById(id).src;
 }
 
-//var ogimgCounter = 2;
-function mouseDown()
-{
-    
-    if (ongoungCounter == 3)
+function pushOngoingToArray()
+{   
+    if (ongoingCounter == 3)
     {
         document.getElementById("img3").src = "";
-        ongoungCounter--;
+        ongoingCounter--;
         selectedArray.push(ongoingTemp[2]);
     }
-    else if (ongoungCounter == 2)
+    else if (ongoingCounter == 2)
     {
-        
         document.getElementById("img2").src = "";
-        ongoungCounter--;
+        ongoingCounter--;
         selectedArray.push(ongoingTemp[1]);
     }
-    else if (ongoungCounter == 1)
+    else if (ongoingCounter == 1)
     {
         
         document.getElementById("img1").src = "";
-        ongoungCounter--;
+        ongoingCounter--;
         selectedArray.push(ongoingTemp[0]);
-        round = round*(-1);
-
-        
-    }
-        
+        round = round*(-1); 
+    }       
 }
+
 
 var count = 1;
 function TurnCount()
@@ -368,7 +439,14 @@ function checker(value)
     {
         for (let index = 0; index < 20; index++) 
         {
-            selectedArray[index] = kenanDeck[index];
+            selectedArray[index] = kenanAwesomeDeck[index];
+        }
+    }
+    else if(value == 7)
+    {
+        for (let index = 0; index < 20; index++) 
+        {
+            selectedArray[index] = kenanNotAwesomeDeck[index];
         }
     }
 }
