@@ -2,7 +2,7 @@
 Final Project of Programming Web Applications Course
 <br>
 - University of Łódz
-- (8 May 2022)
+- (8 June 2022)
 - <a href="https://kenanaegean.github.io/MTG-Deck-Helper/">Click To Test Project (Github Pages)</a>
 - Teacher referance: <a href="https://math.uni.lodz.pl/~peter/">Piotr Frątczak</a>
 
