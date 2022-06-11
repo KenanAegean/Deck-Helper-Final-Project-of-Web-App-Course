@@ -20,18 +20,13 @@ Final project
 </p>
 
 <br><b>Some Screenshots</b>
-<div  style="display: flex;">
-	<div style="margin: auto; display: grid; height: 100%; ">
-		<img href="Screenshots/1.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
-		<img href="Screenshots/2.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
-		
-	</div>
-	<div style="margin: auto; display: grid; height: 100%; ">
-		<img href="Screenshots/3.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
-		<img href="Screenshots/4.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
-	</div>
 
-</div>
+	
+Screenshots           |  Screenshots 
+:-------------------------:|:-------------------------:
+![](Screenshots/1.png)  |  ![](Screenshots/3.png)
+![](Screenshots/2.png)  |  ![](Screenshots/4.png)
+
 
 <ul>
 <br><b>Scoring</b>
