@@ -1,14 +1,11 @@
 # MTG-Deck-Helper
-Final Project of Web App Course
+Final Project of Programming Web Applications Course
 <br>
-<a href="https://kenanaegean.github.io/MTG-Deck-Helper/">Click To Test Project</a>
+- University of Łódz
+- (8 May 2022)
+- <a href="https://kenanaegean.github.io/MTG-Deck-Helper/">Click To Test Project</a>
+- Teacher referance: <a href="https://math.uni.lodz.pl/~peter/">Piotr Frątczak</a>
 
-
-<p class="title">
-Final project
-</p>
-
-<br>Teacher referance: <a href="https://math.uni.lodz.pl/~peter/">Piotr Frątczak</a><br>
 
 <p>
 <br><b>Main goal</b>
