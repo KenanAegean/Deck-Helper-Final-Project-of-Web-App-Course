@@ -6,74 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic: The Gathering Archenemy</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script src="javascript/archenemey.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
-    <style>
-        body, option, select 
-        {
-            font-family: 'MedievalSharp';font-size: 22px;
-        }
-
-        option, select 
-        {
-            font-family: 'MedievalSharp';font-size: 15px;
-        }
-
-        #img1, #img2, #img3, #smlPic
-        {
-            border-radius: 0.73vw; 
-        }  
-    </style>
-
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="javascript/archenemy.js"></script>
+    <link href="css/archenemy.css" type="text/css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>   
 </head>
 
-<body oncontextmenu="return false;" onload="deckCall(1)" style="background-color: #171717;">
-    <div style="display: flex;">
-        <div style="margin-left:50px;">
-            <label style="color: darkred; ">Choose your deck:</label>
+<body oncontextmenu="return false;" onload="deckCall(1)" >
+    <div id="outterDiv">
+        <div id="innerLeftDiv">
+            <label class="redLabel">Choose your deck:</label>
             <br>
-            <select name="" id="ses" style="background-color: black; color: darkgray;" onchange="deckCall(value);">
-                <option style="color: darkgray;" value="1">Randomly gathered set</option>
-                <option style="color: darkgray;" value="2">Assemble the Doomsday Machine</option>
-                <option style="color: darkgray;" value="3">Bring About the Undead Apocalypse</option>
-                <option style="color: darkgray;" value="4">Scorch the World with Dragonfire</option>
-                <option style="color: darkgray;" value="5">Trample Civilization Underfoot</option>
-                <option style="color: darkgray;" value="6">Kenan's Magneficent Awesome Deck </option>
-                <option style="color: darkgray;" value="7">Kenan's Avarage(Not Awesome) Deck </option>
+            <select id="ses" onchange="deckCall(value);">
+                <option value="1">Randomly gathered set</option>
+                <option value="2">Assemble the Doomsday Machine</option>
+                <option value="3">Bring About the Undead Apocalypse</option>
+                <option value="4">Scorch the World with Dragonfire</option>
+                <option value="5">Trample Civilization Underfoot</option>
+                <option value="6">Kenan's Magneficent Awesome Deck </option>
+                <option value="7">Kenan's Avarage(Not Awesome) Deck </option>
             </select>
+            <br><br>
+            <label class="redLabel">Current scheme</label>
             <br>
-            <br>
-            <label style="color: darkred;">Current scheme</label>
-            <br>
-            <label style="color: darkgray;">(click the pick next)</label>
+            <label class="whiteLabel">(click the pick next)</label>
             <br>
             <img onmouseover="mouseOver('smlPic')" onclick="imageClicked()" id="smlPic" width="200px">
             <br>
-            <label id="countShow" style="color: darkgray;">Turn: 1</label>
+            <label id="countShow" class="whiteLabel">Turn: 1</label>
             <br>
-            <label style="color: darkgray; font-size: 13px !important">&copy; Kenan EGE</label>
+            <label id="kenan" class="whiteLabel">&copy; Kenan EGE</label>
             <br><br>
-            <label style="color: darkred;">Ongoing schemes:</label>
+            <label class="redLabel">Ongoing schemes:</label>
             <br>
-            <label style="color: darkgray;">(right-click to abandon)</label>
+            <label class="whiteLabel">(right-click to abandon)</label>
             <br>
-            <div style="position:absolute; z-index:1; top:555px;">
+            <div id="d_img1">
                 <img  oncontextmenu="pushOngoingToArray();" onmouseover="mouseOver('img1')" value="0"  width="200px"  id="img1">
             </div>
-            <div  style="position:absolute; z-index:2; top:605px; ">
+            <div id="d_img2">
                 <img oncontextmenu="pushOngoingToArray();" onmouseover="mouseOver('img2')" value="1"  width="200px" id="img2">
             </div>
-            <div   style="position:absolute; z-index:3; top:655px; ">
+            <div id="d_img3">
                 <img oncontextmenu="pushOngoingToArray();" onmouseover="mouseOver('img3')" value="2"  width="200px" id="img3">
             </div>
             <br>
 
         </div>
 
-        <div style="margin: auto; display: grid; height: 100%; ">
-            <img style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
-
+        <div id="innerRightDiv">
+            <img id="bigPic">
         </div>
     </div>
 

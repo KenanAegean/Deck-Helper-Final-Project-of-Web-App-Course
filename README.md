@@ -24,8 +24,8 @@ Final project
 	
 Screenshots           |  Screenshots 
 :-------------------------:|:-------------------------:
-![](Screenshots/1.png)  |  ![](Screenshots/3.png)
-![](Screenshots/2.png)  |  ![](Screenshots/4.png)
+![](images/Screenshots/1.png)  |  ![](images/Screenshots/3.png)
+![](images/Screenshots/2.png)  |  ![](images/Screenshots/4.png)
 
 
 <ul>

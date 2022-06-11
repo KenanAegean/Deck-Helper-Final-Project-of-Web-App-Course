@@ -1,0 +1,78 @@
+body, option, select 
+{
+    font-family: 'MedievalSharp';font-size: 22px;
+    background-color: #171717;
+    background-color: black;
+    color: darkgray;
+}
+
+option, select 
+{
+    font-family: 'MedievalSharp';
+    font-size: 15px;
+}
+
+.redLabel
+{
+    color: darkred;
+}
+
+.whiteLabel
+{
+    color: darkgray;
+}
+
+#d_img1, #d_img2, #d_img3
+{
+    position:absolute; 
+}
+
+#d_img1
+{
+    z-index:1; 
+    top:555px;
+}
+#d_img2
+{
+    z-index:2; 
+    top:605px;
+}
+#d_img3
+{
+    z-index:3; 
+    top:655px;
+}
+
+#img1, #img2, #img3, #smlPic
+{
+    border-radius: 0.73vw; 
+}
+
+#outterDiv
+{
+    display: flex;
+}
+
+#innerLeftDiv
+{
+    margin-left:50px;
+}
+
+#innerRightDiv
+{
+    margin: auto; 
+    display: grid; 
+    height: 100%; 
+}
+
+#bigPic
+{
+    max-width: 100%; 
+    max-height: 100vh; 
+    border-radius: 2.5vw;
+}
+
+#kenan
+{
+    font-size: 13px !important;
+}
