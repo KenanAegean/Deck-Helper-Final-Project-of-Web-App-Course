@@ -1,4 +1,4 @@
-# Deck-Helper-Final-Project-of-Web-App-Course
+# MTG-Deck-Helper
 Final Project of Web App Course
 <br>
 <a href="https://kenanaegean.github.io/Deck-Helper-Final-Project-of-Web-App-Course/">Click To Test Project</a>
