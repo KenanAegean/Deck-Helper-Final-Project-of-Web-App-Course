@@ -1,12 +1,14 @@
 # MTG-Deck-Helper
 Final Project of Web App Course
 <br>
-<a href="https://kenanaegean.github.io/Deck-Helper-Final-Project-of-Web-App-Course/">Click To Test Project</a>
+<a href="https://kenanaegean.github.io/MTG-Deck-Helper/">Click To Test Project</a>
 
 
 <p class="title">
 Final project
 </p>
+
+<br>Teacher referance: <a href="https://math.uni.lodz.pl/~peter/">Piotr Frątczak</a><br>
 
 <p>
 <br><b>Main goal</b>
