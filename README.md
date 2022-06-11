@@ -19,6 +19,20 @@ Final project
 <br><br>For each numbered task there's one point to earn (no halves, so please read carefully).
 </p>
 
+<br><b>Some Screenshots</b>
+<div  style="display: flex;">
+	<div style="margin: auto; display: grid; height: 100%; ">
+		<img href="Screenshots/1.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
+		<img href="Screenshots/2.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
+		
+	</div>
+	<div style="margin: auto; display: grid; height: 100%; ">
+		<img href="Screenshots/3.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
+		<img href="Screenshots/4.png" style="max-width: 100%; max-height: 100vh; border-radius: 2.5vw;" id="bigPic">
+	</div>
+
+</div>
+
 <ul>
 <br><b>Scoring</b>
 <li>4 pts: 3;
