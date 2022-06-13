@@ -1,0 +1,66 @@
+#!/bin/bash
+
+u="$USER" 
+mkdir ~/MYDIR
+touch ~/MYDIR/MYFILE 
+echo $u >> ~/MYDIR/MYFILE
+
+chmod 440 ~/MYDIR
+chmod 166 ~/MYDIR/MYFILE
+
+ln ~/MYDIR/MYFILE ~/HARDLINKMYFILE
+
+cp -R MYDIR/ ~/MYDIRCOPY
+
+mkdir ~/DOTDOT
+cp find . -type f -name "*.*.*" ~/DOTDOT/
+
+who | cut -d "Anna" -f l | wc -l
+
+ln -s <path to the file/folder to be linked> <the path of the link to be created>
+mkdir home/bin/C:\\WINDOWS | ln -s  ~/bin/C\:\\WINDOWS/ ~/\$SYSTEMDIR
+
+if [[ find . -type f -name "*virus*" ]]; then
+	echo “Virus found”    
+fi
+
+
+
+mkdir ~/MYDIR; whoami > ~/MYDIR/MYFILE
+
+chmod u-r,g-r ~/MYDIR
+chmod u+x,g+rw,o+rw ~/MYDIR/MYFILE
+
+ln ~/MYDIR/MYFILE ~/MYFILE_HL
+
+cp -R MYDIR/ ./MYDIRCOPY/
+
+mkdir ~/DOTDOT; find /etc/ -maxdepth 1 -type f | grep "\..*\." | xargs -I {} cp {} ~/DOTDOT/
+#or
+# find /etc -type f -exec cp {} ~/DOTDOT \; 2> /dev/null
+#a different thing but accepted
+
+cat /etc/passwd | tr -s : \  | awk '{print $5 " " $6}' | grep "^Anna" | wc -l
+#or
+# cut -f5 -d: /etc/passwd | grep -i ^Anna\  | wc -l
+
+mkdir -p ~/bin/C:\\WINDOWS; ln -s ~/bin/C\:\\WINDOWS/ ~/\$SYSTEMDIR
+
+find ~/ -type f -printf %f\\n | grep -iq virus && echo A virus found!
+#or
+#[ "$(find ~ -type f -name "*virus*" |head -n 1)" ] && echo \!
+
+
+Task 1.
+Write a script that:
+* creates a file MYFILE containing your login name in MYDIR subdirectory of your home,
+	hint: whoami, $USER
+* sets the filemode of MYDIR so that you and the group owner are not allowed to read its contents
+* additionally sets the filemode of MYFILE so that the user owner can execute it and others can both read and modify its contents
+* creates a hardlink to MYFILE in your home
+* makes a copy of MYDIR named MYDIRCOPY
+* copies all regular files containing two dots (.) in their name from /etc/ to DOTDOT subdirectory of your home
+* displays the number of all users with first name Anna
+* creates file $SYSTEMDIR that is a symlink to C:\WINDOWS located in bin/ subdirectory of your home
+* displays an arbitrary warning if an executable file with name containing the word 'virus' can be found in your home directory and any of its subdirectories 
+
